@@ -1,19 +1,22 @@
 import type { Config } from "drizzle-kit";
-import dotenv from "dotenv";
+// ? == NOTE ==
+// ? For local development, use dotenv to load environment variables from a .env file
+// ? (see ...)
+import dotenv from "dotenv"
 
 dotenv.config({
   path: "./.env.local",
 });
 
 export default {
-  schema: "./server/db_tables.ts",
-  out: "./server/drizzle",
+  schema: "./server/db_tables.ts", // Path to your schema
+  out: "./server/drizzle", // Path to the output directory
   driver: "mysql2",
   dbCredentials: {
-    user: process.env.RDS_USER,
-    password: process.env.RDS_PASSWORD,
-    host: process.env.RDS_HOST || "",
-    port: Number(process.env.RDS_PORT),
-    database: process.env.RDS_DATABASE || "",
+    user: process.env.DATABASE_USER,
+    password: process.env.DATABASE_PASSWORD,
+    host: process.env.DATABASE_HOST || "",
+    port: Number(process.env.DATABASE_PORT),
+    database: process.env.DATABASE_DATABASE || "",
   },
 } satisfies Config;

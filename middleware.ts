@@ -1,7 +1,8 @@
 import { createI18nMiddleware } from "next-international/middleware";
 import { NextRequest } from "next/server";
 
-// https://next-international.vercel.app/docs/app-setup for more details
+// ? == NOTE ==
+// ? https://next-international.vercel.app/docs/app-setup for more details
 const I18nMiddleware = createI18nMiddleware({
   locales: ["en", "fr"],
   defaultLocale: "fr",

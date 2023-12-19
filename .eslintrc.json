@@ -12,7 +12,9 @@
     "parser": "@typescript-eslint/parser"
   },
   "rules": {
-    "react/jsx-props-no-spreading": "off",
+    "import/no-extraneous-dependencies": "off"
+    // Preferences for quick projects
+    /* "react/jsx-props-no-spreading": "off",
     "react/no-array-index-key": "off",
     "react-hooks/exhaustive-deps": "off",
     "no-nested-ternary": "off",
@@ -21,7 +23,6 @@
     "no-useless-escape": "off",
     "no-return-assign": "off",
     "import/no-self-import": "off",
-    "import/no-extraneous-dependencies": "off",
     "react/require-default-props": "off",
     "no-plusplus": "off",
     "no-else-return": "off",
@@ -32,6 +33,6 @@
     "react/function-component-definition": [
       2,
       { "namedComponents": ["arrow-function", "function-declaration"] }
-    ]
+    ] */
   }
 }
