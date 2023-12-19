@@ -2,7 +2,6 @@
   "extends": "./tsconfig.json",
   "include": [
     // 👇️ directories and files to lint
-    "app",
     // add all files in which you see
     // the "parserOptions.project" error
     ".eslintrc.js"

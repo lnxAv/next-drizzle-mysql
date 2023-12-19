@@ -12,7 +12,8 @@
     "parser": "@typescript-eslint/parser"
   },
   "rules": {
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": ["off"],
+    "import/prefer-default-export": ["off"]
     // Preferences for quick projects
     /* "react/jsx-props-no-spreading": "off",
     "react/no-array-index-key": "off",
@@ -29,7 +30,7 @@
     "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/no-use-before-define": "off",
     "no-use-before-define": "off",
-    "import/prefer-default-export": ["off"],
+
     "react/function-component-definition": [
       2,
       { "namedComponents": ["arrow-function", "function-declaration"] }
