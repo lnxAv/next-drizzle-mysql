@@ -19,4 +19,4 @@ export default async function getExemple() {
   return results;
 }
 
-export type ExempleDataType = ReturnType<typeof getExemple>;
+export type ExempleDataType = Awaited<ReturnType<typeof getExemple>>;

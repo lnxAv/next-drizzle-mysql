@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .text-mode-light {
+    color: theme('colors.light');
+  }
+  .text-mode-dark {
+    color: theme('colors.dark');
+  }
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
