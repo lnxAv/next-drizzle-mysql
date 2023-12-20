@@ -1,6 +1,7 @@
 "use client";
 
 import { createI18nClient } from "next-international/client";
+import { LOCALES } from "./locales";
 
 // ? == NOTE ==
 // ? https://next-international.vercel.app/docs/app-setup for more details
@@ -11,6 +12,6 @@ export const {
   useChangeLocale,
   useCurrentLocale,
 } = createI18nClient({
-  en: () => import("./lang/en"),
-  fr: () => import("./lang/fr"),
+  [LOCALES.EN]: () => import("./lang/en"),
+  [LOCALES.FR]: () => import("./lang/fr"),
 });

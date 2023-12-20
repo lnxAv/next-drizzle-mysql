@@ -1,16 +1,17 @@
-import { getI18n } from "@/app/locales/server";
 import getExemple, { ExempleDataType } from "@/server/lib/exemple/getExemple";
 import { NextResponse } from "next/server";
 
-export async function GET() {
-  const t = await getI18n();
+export async function GET(): Promise<NextResponse<ExempleGetResponse>> {
   // const lang = getCurrentLocale();
   try {
-    const ping = await getExemple();
-    return NextResponse.json({ ping, server: t("connectionSuccess") });
+    const payload = await getExemple();
+    return NextResponse.json({ payload, server: "success" });
   } catch (error) {
-    return NextResponse.json({ ping: null, server: t("connectionFailed") });
+    return NextResponse.json({ payload: null, server: "failed" });
   }
 }
 
-export type ExempleGetResponse = { ping: ExempleDataType; server: any };
+export type ExempleGetResponse = {
+  payload: ExempleDataType;
+  server: "failed" | "success";
+};

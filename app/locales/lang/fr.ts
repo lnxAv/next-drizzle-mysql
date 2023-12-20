@@ -1,5 +1,8 @@
 export default {
   poweredBy: "Propulsé par",
-  connectionSuccess: "Connection réussie",
-  connectionFailed: "Connection échouée",
+  connection: {
+    success: "Connection réussie",
+    failed: "Connection échouée",
+    loading: "Chargement...",
+  },
 } as const;

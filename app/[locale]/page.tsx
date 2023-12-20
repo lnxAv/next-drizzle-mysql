@@ -1,6 +1,8 @@
 "use client";
 
 import useSWR, { Fetcher } from "swr";
+import Clock from "@/components/clock";
+import LocalToggle from "@/components/localeToggle";
 import { useI18n } from "../locales/client";
 import { ExempleGetResponse } from "../api/exemple/route";
 
@@ -31,7 +33,7 @@ export default function Page() {
       <div className="flex flex-col items-center w-auto pt-1 pb-2">
         <div className="flex-1 [writing-mode:vertical-lr] ">
           <p className="whitespace-nowrap">
-            <span>{t("poweredBy")} </span>
+            <span>{t("poweredBy")}</span>
             {usefulLinks.map((link, i) => (
               <a
                 className="my-1 font-bold"
@@ -61,9 +63,13 @@ export default function Page() {
       </div>
       <div className="flex flex-col flex-1 ">
         <div className="flex flex-row ">
-          <div className="px-2 md:px-5 sm:px-5 font-bold">EN | FR</div>
+          <div className="px-2 md:px-5 sm:px-5 font-bold">
+            <LocalToggle />
+          </div>
           <div className="flex flex-1 justify-end items-center gap-5 px-2 md:px-5 sm:px-5 ">
-            <div> mtl,qc asdsadsadsaad</div>
+            <div>
+              <Clock />
+            </div>
             <div> X </div>
           </div>
         </div>
@@ -75,7 +81,11 @@ export default function Page() {
               </div>
               <div className="font-bold text-2xl md:text-4xl lg:text-5xl xl:text-6xl ">
                 <p>
-                  <span>{!isLoading ? `${data?.server},` : "loading..."}</span>
+                  <span>
+                    {!isLoading
+                      ? `${t(`connection.${data?.server || "failed"}`)},`
+                      : `${t("connection.loading")}`}
+                  </span>
                 </p>
                 <a
                   className="font-bold underline"
