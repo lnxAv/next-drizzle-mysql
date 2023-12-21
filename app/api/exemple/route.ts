@@ -1,4 +1,4 @@
-import getExemple, { ExempleDataType } from "@/server/lib/exemple/getExemple";
+import getExemple, { ExempleDataType } from "@/database/lib/exemple/getExemple";
 import { NextResponse } from "next/server";
 
 // ? == Config ==

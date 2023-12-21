@@ -4,11 +4,6 @@ import { MySql2Database } from "drizzle-orm/mysql2";
 import { getDb } from "../dbConnection";
 import { exempleTable } from "../../db_tables";
 
-/* 
-    SELECT * FROM exemple_table
-    WHERE exemple_table.lang_id = ${language}
-*/
-
 export default async function getExemple() {
   const lang = getCurrentLocale();
   const db: MySql2Database<Record<string, never>> | null = await getDb();
