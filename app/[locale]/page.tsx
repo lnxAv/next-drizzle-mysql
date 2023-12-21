@@ -12,13 +12,15 @@ const usefulLinks = [
     name: "Next",
     url: "https://nextjs.org/",
     element: (
-      <Next className="inline-block w-10 mt-5 my-3 leading-0 mx-0 px-0 h-auto rotate-90" />
+      <Next className="inline-block w-10 mt-5 my-3 leading-0 mx-0 px-0 h-auto rotate-90 pb-0.5 border-b-black border-b" />
     ),
   },
   {
     name: "Vercel",
     url: "https://vercel.com/templates",
-    element: <Vercel className="inline-block w-10 my-3 h-auto rotate-90" />,
+    element: (
+      <Vercel className="inline-block w-10 my-3 h-auto rotate-90 pb-0.5 border-b-black border-b" />
+    ),
   },
   {
     name: "Drizzle",
