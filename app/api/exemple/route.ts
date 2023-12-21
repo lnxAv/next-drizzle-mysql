@@ -1,7 +1,6 @@
 import getExemple, { ExempleDataType } from "@/server/lib/exemple/getExemple";
 import { NextResponse } from "next/server";
 
-export const runtime = "edge";
 export const dynamic = "force-dynamic";
 export async function GET(): Promise<NextResponse<ExempleGetResponse>> {
   // const lang = getCurrentLocale();
