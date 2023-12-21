@@ -1,5 +1,6 @@
 "use client";
 
+import React from "react";
 import useSWR, { Fetcher } from "swr";
 import Clock from "@/components/clock";
 import LocalToggle from "@/components/localeToggle";
@@ -51,9 +52,8 @@ export default function Page() {
             <div className="flex flex-row items-center whitespace-nowrap">
               <p className="text-sm">{t("poweredBy")} </p>
               {usefulLinks.map((link, i) => (
-                <>
+                <React.Fragment key={link.name}>
                   <a
-                    key={link.name}
                     aria-label={link.name}
                     className="inline-block relative my-1 font-bold text-sm underline"
                     href={link.url}
@@ -65,7 +65,7 @@ export default function Page() {
                   <p className="font-regular">
                     {i < usefulLinks.length - 1 ? "," : "."}
                   </p>
-                </>
+                </React.Fragment>
               ))}
             </div>
           </div>
@@ -93,7 +93,10 @@ export default function Page() {
                 <button
                   type="button"
                   aria-label="toggle-dark-mode"
-                  onClick={() => {}}
+                  onClick={() => {
+                    if (theme === "dark") setTheme("light");
+                    if (theme === "light") setTheme("dark");
+                  }}
                 >
                   <DarkMode
                     primary="fill-dark dark:fill-light"
