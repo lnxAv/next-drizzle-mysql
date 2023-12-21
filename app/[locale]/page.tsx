@@ -3,7 +3,7 @@
 import useSWR, { Fetcher } from "swr";
 import Clock from "@/components/clock";
 import LocalToggle from "@/components/localeToggle";
-import { Blob, DarkMode } from "@/components/svg";
+import { Blob, DarkMode, Next, Vercel } from "@/components/svg";
 import { useI18n } from "../locales/client";
 import { ExempleGetResponse } from "../api/exemple/route";
 
@@ -11,10 +11,14 @@ const usefulLinks = [
   {
     name: "Next",
     url: "https://nextjs.org/",
+    element: (
+      <Next className="inline-block w-10 mt-5 my-3 leading-0 mx-0 px-0 h-auto rotate-90" />
+    ),
   },
   {
     name: "Vercel",
     url: "https://vercel.com/templates",
+    element: <Vercel className="inline-block w-10 my-3 h-auto rotate-90" />,
   },
   {
     name: "Drizzle",
@@ -40,25 +44,28 @@ export default function Page() {
       </div>
       {/* content */}
       <div className="relative flex flex-row w-screen h-screen overflow-hidden py-5 px-2 gap-2 text-dark dark:text-light ">
-        <div className="flex flex-col items-center w-auto pt-1 pb-2">
-          <div className="flex-1 [writing-mode:vertical-lr] ">
-            <p className="whitespace-nowrap">
-              <span className="text-sm">{t("poweredBy")} </span>
+        <div className="flex flex-col items-center w-auto max-w-5 pt-1 pb-2">
+          <div className="flex-1 [writing-mode:vertical-lr] boder-red-900">
+            <div className="flex flex-row items-center whitespace-nowrap">
+              <p className="text-sm">{t("poweredBy")} </p>
               {usefulLinks.map((link, i) => (
-                <a
-                  className="my-1 font-bold text-sm"
-                  key={link.name}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {link.name}
-                  <span className="font-regular">
+                <>
+                  <a
+                    key={link.name}
+                    aria-label={link.name}
+                    className="inline-block relative my-1 font-bold text-sm underline"
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {link.element ? link.element : link.name}
+                  </a>
+                  <p className="font-regular">
                     {i < usefulLinks.length - 1 ? "," : "."}
-                  </span>
-                </a>
+                  </p>
+                </>
               ))}
-            </p>
+            </div>
           </div>
           <div className="justify-self-end [writing-mode:vertical-lr] ">
             <a

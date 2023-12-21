@@ -1,7 +1,10 @@
 import getExemple, { ExempleDataType } from "@/server/lib/exemple/getExemple";
 import { NextResponse } from "next/server";
 
+// ? == Config ==
+// ? https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config
 export const dynamic = "force-dynamic";
+
 export async function GET(): Promise<NextResponse<ExempleGetResponse>> {
   try {
     const payload = await getExemple();

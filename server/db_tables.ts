@@ -1,4 +1,4 @@
-// ? == NOTE ==
+// ? == Drizzle schemas ==
 // ?  https://orm.drizzle.team/docs/schemas
 
 import { int, text, mysqlSchema, varchar } from "drizzle-orm/mysql-core";

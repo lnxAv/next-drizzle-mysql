@@ -1,5 +1,8 @@
 import { Lekton } from "next/font/google";
 
+// ? == Fonts ==
+// ? https://nextjs.org/docs/app/building-your-application/optimizing/fonts
+
 export const lekton = Lekton({
   weight: "400",
   subsets: ["latin"],

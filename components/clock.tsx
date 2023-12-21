@@ -3,8 +3,8 @@
 import { useCurrentLocale } from "@/app/locales/client";
 import { useEffect, useRef, useState } from "react";
 
-// ? https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 const timeZone = "America/Montreal";
+
 const getLocaleTime = () => {
   const date = new Date();
   const dateString = date.toLocaleDateString("en", {

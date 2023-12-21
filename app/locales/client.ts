@@ -2,8 +2,9 @@
 
 import { createI18nClient } from "next-international/client";
 
-// ? == NOTE ==
-// ? https://next-international.vercel.app/docs/app-setup for more details
+// ? == i18n ==
+// ? https://next-international.vercel.app/docs/app-setup
+
 export const {
   useI18n,
   useScopedI18n,
