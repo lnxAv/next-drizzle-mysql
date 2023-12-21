@@ -11,13 +11,10 @@ import { exempleTable } from "../../db_tables";
 
 export default async function getExemple() {
   const lang = getCurrentLocale();
-  let db: MySql2Database<Record<string, never>> | null;
-  try {
-    db = await getDb();
-  } catch (error) {
-    return null; // Connection Failed
-  }
+  const db: MySql2Database<Record<string, never>> | null = await getDb();
+
   if (!db) return null; // Connection Failed
+
   const results = await db
     .select()
     .from(exempleTable)
