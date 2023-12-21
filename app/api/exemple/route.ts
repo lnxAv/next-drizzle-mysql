@@ -8,9 +8,10 @@ export const dynamic = "force-dynamic";
 export async function GET(): Promise<NextResponse<ExempleGetResponse>> {
   try {
     const payload = await getExemple();
-    if (!payload) throw new Error("Failed to get payload");
+    if (!payload) throw new Error("failed");
     return NextResponse.json({ payload, server: "success" });
   } catch (error) {
+    // ? The connection failed, read README.md for more information
     return NextResponse.json({ payload: null, server: "failed" });
   }
 }
