@@ -1,6 +1,6 @@
 ## Documentation order
 
-- Instalation(Npm + Vercel secrets dev vs prod)
+- Instalation(Npm + Vercel secrets dev vs prod / Clean vs Example Project)
 - Husky (npx husky install + lint-stage)
 - Database Information ( Drizzle ORM )
 - i18n informations ( https://next-international.vercel.app/ )
