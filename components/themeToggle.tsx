@@ -20,6 +20,7 @@ export default function ThemeToggle() {
       type="button"
       aria-label="toggle-dark-mode"
       onClick={() => {
+        console.log(theme);
         if (theme === "dark") setTheme("light");
         if (theme === "light") setTheme("dark");
       }}

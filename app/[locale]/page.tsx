@@ -42,7 +42,7 @@ export default function Page() {
     <>
       {/* bg & blob */}
       <div className="absolute w-full h-full ">
-        <div className="absolute top-5 dark:top-0 right-11 dark:right-0 w-5 h-5 bg-light dark:w-full dark:h-full dark:bg-dark overflow-hidden rounded-sm" />
+        <div className="transition-all absolute w-full h-full bg-light dark:bg-dark overflow-hidden rounded-sm" />
         <div className="relative w-full h-full overflow-hidden z-0">
           <Blob
             darkMode={theme === "dark"}
