@@ -5,6 +5,7 @@ import useSWR, { Fetcher } from "swr";
 import Clock from "@/components/clock";
 import LocalToggle from "@/components/localeToggle";
 import ThemeToggle from "@/components/themeToggle";
+import { useTheme } from "next-themes";
 import { Blob, Next, Vercel } from "@/components/svg";
 import { useI18n } from "../locales/client";
 import { ExempleGetResponse } from "../api/exemple/route";
@@ -14,14 +15,14 @@ const usefulLinks = [
     name: "Next",
     url: "https://nextjs.org/",
     element: (
-      <Next className="inline-block w-10 mt-5 my-3 leading-0 mx-0 px-0 h-auto rotate-90 pb-0.5 border-b-black border-b" />
+      <Next className="inline-block w-11 mt-5 my-3 leading-0 mx-0 px-0 h-auto rotate-90 pb-0.5 border-b-black dark:border-b-light border-b fill-dark dark:fill-light" />
     ),
   },
   {
     name: "Vercel",
     url: "https://vercel.com/templates",
     element: (
-      <Vercel className="inline-block w-10 my-3 h-auto rotate-90 pb-0.5 border-b-black border-b" />
+      <Vercel className="inline-block w-11 my-3 h-auto rotate-90 pb-0.5 border-b-black dark:border-b-light border-b fill-dark dark:fill-light" />
     ),
   },
   {
@@ -32,6 +33,7 @@ const usefulLinks = [
 
 export default function Page() {
   const t = useI18n();
+  const { theme } = useTheme();
   const fetcher: Fetcher<ExempleGetResponse, string> = (url: string) =>
     fetch(url).then((res) => res.json());
   const { data, isLoading } = useSWR(`/api/exemple`, fetcher);
@@ -42,8 +44,14 @@ export default function Page() {
       <div className="absolute w-full h-full ">
         <div className="absolute top-5 dark:top-0 right-11 dark:right-0 w-5 h-5 bg-light dark:w-full dark:h-full dark:bg-dark overflow-hidden rounded-sm" />
         <div className="relative w-full h-full overflow-hidden z-0">
-          <Blob className="absolute animate-float w-3/4 h-3/4 bottom-0 right-0 scale-90 origin-center mix-blend-darken opacity-95" />
-          <Blob className="absolute w-3/4 h-3/4 bottom-0 right-0 origin-center scale-120 blur-sm " />
+          <Blob
+            darkMode={theme === "dark"}
+            className="absolute animate-float w-3/4 h-3/4 bottom-0 right-0 scale-90 origin-center mix-blend-darken opacity-95"
+          />
+          <Blob
+            darkMode={theme === "dark"}
+            className="absolute w-3/4 h-3/4 bottom-0 right-0 origin-center scale-120 blur-sm "
+          />
         </div>
       </div>
       {/* content */}

@@ -50,7 +50,13 @@ export function Next({ className }: { className?: string }) {
   );
 }
 
-export function Blob({ className }: { className?: string }) {
+export function Blob({
+  className,
+  darkMode,
+}: {
+  className?: string;
+  darkMode?: boolean;
+}) {
   const paths = [
     "M36.4,-50C46,-35.3,51.8,-22.7,59.3,-6.5C66.9,9.7,76.2,29.5,71.4,44.3C66.5,59.1,47.5,68.8,28.4,74.1C9.2,79.5,-10.2,80.5,-25.7,73.6C-41.1,66.6,-52.5,51.8,-58.2,36.3C-63.8,20.9,-63.7,4.9,-59.9,-9.5C-56.1,-23.8,-48.6,-36.4,-38,-50.9C-27.4,-65.4,-13.7,-81.8,-0.2,-81.6C13.4,-81.4,26.8,-64.6,36.4,-50Z;",
     "M45.4,-51.1C58.1,-43.4,67.3,-28.4,69.6,-12.6C72,3.2,67.6,19.8,59.1,33.7C50.6,47.6,38,58.7,23.2,64.3C8.5,69.8,-8.5,69.8,-22.4,63.8C-36.3,57.7,-47.2,45.7,-57.8,31.4C-68.4,17.2,-78.6,0.8,-74.7,-11.7C-70.8,-24.2,-52.7,-32.8,-37.9,-40.1C-23.1,-47.4,-11.6,-53.4,2.4,-56.2C16.3,-59.1,32.7,-58.7,45.4,-51.1Z;",
@@ -81,12 +87,21 @@ export function Blob({ className }: { className?: string }) {
           id="paint0_linear_2_46"
           x1="-100"
           y1="0"
-          x2="600"
-          y2="500"
+          x2="200"
+          y2="150"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stopColor="#CD07FF" />
-          <stop offset="1" stopColor="#0D23ED" />
+          {!darkMode ? (
+            <>
+              <stop stopColor="#CD07FF" />
+              <stop offset="1" stopColor="#0D23ED" />
+            </>
+          ) : (
+            <>
+              <stop stopColor="#13d125" />
+              <stop offset="1" stopColor="#cbb615" />
+            </>
+          )}
         </linearGradient>
       </defs>
     </svg>
