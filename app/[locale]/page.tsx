@@ -4,7 +4,8 @@ import React from "react";
 import useSWR, { Fetcher } from "swr";
 import Clock from "@/components/clock";
 import LocalToggle from "@/components/localeToggle";
-import { Blob, DarkMode, Next, Vercel } from "@/components/svg";
+import ThemeToggle from "@/components/themeToggle";
+import { Blob, Next, Vercel } from "@/components/svg";
 import { useI18n } from "../locales/client";
 import { ExempleGetResponse } from "../api/exemple/route";
 
@@ -39,7 +40,7 @@ export default function Page() {
     <>
       {/* bg & blob */}
       <div className="absolute w-full h-full ">
-        <div className="transition-all absolute top-5 dark:top-0 right-11 dark:right-0 w-5 h-5 bg-light dark:w-full dark:h-full dark:bg-dark overflow-hidden rounded-sm" />
+        <div className="absolute top-5 dark:top-0 right-11 dark:right-0 w-5 h-5 bg-light dark:w-full dark:h-full dark:bg-dark overflow-hidden rounded-sm" />
         <div className="relative w-full h-full overflow-hidden z-0">
           <Blob className="absolute animate-float w-3/4 h-3/4 bottom-0 right-0 scale-90 origin-center mix-blend-darken opacity-95" />
           <Blob className="absolute w-3/4 h-3/4 bottom-0 right-0 origin-center scale-120 blur-sm " />
@@ -90,20 +91,7 @@ export default function Page() {
                 <Clock />
               </div>
               <div className="relative fill-dark dark:fill-light top-0 w-9 ">
-                <button
-                  type="button"
-                  aria-label="toggle-dark-mode"
-                  onClick={() => {
-                    if (theme === "dark") setTheme("light");
-                    if (theme === "light") setTheme("dark");
-                  }}
-                >
-                  <DarkMode
-                    primary="fill-dark dark:fill-light"
-                    secondary="fill-light dark:fill-dark"
-                    className="relative top-0 w-5 h-5 rounded-sm"
-                  />
-                </button>
+                <ThemeToggle />
               </div>
             </div>
           </div>
