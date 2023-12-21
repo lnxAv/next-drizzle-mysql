@@ -17,6 +17,17 @@ const config: Config = {
         regular: ["var(--font-lekton)"],
         bold: ["var(--font-lektonBold)"],
       },
+      animation: {
+        float: "float 20s ease-in-out infinite",
+      },
+      keyframes: {
+        float: {
+          "0%, 100%": { transform: "translate(0,0)" },
+          "40%": { transform: "translate(-0.20rem, 0.10rem)" },
+          "60%": { transform: "translate(0.30rem,0.25rem)" },
+          "80%": { transform: "translate(0.10rem,-0.30rem)" },
+        },
+      },
     },
   },
   plugins: [],
