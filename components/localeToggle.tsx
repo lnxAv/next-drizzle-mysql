@@ -1,19 +1,26 @@
 "use client";
 
 import { useChangeLocale } from "@/app/locales/client";
-import { LOCALES } from "@/app/locales/locales";
 
 export default function LocalToggle() {
   const locale = useChangeLocale();
   return (
-    <div className="text-right">
-      <div>
-        <button type="button" onClick={() => locale(LOCALES.EN)}>
-          {LOCALES.EN}
+    <div>
+      <div className="text-right text-sm">
+        <button
+          className="uppercase"
+          type="button"
+          onClick={() => locale("en")}
+        >
+          en
         </button>
         <span> | </span>
-        <button type="button" onClick={() => locale(LOCALES.FR)}>
-          {LOCALES.FR}
+        <button
+          className="uppercase"
+          type="button"
+          onClick={() => locale("fr")}
+        >
+          fr
         </button>
       </div>
     </div>

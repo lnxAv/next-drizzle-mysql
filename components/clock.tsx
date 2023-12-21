@@ -5,14 +5,14 @@ import { useEffect, useRef, useState } from "react";
 
 // ? https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 const timeZone = "America/Montreal";
-const getLocaleTime = (locale: string) => {
+const getLocaleTime = () => {
   const date = new Date();
-  const dateString = date.toLocaleDateString(locale, {
+  const dateString = date.toLocaleDateString("en", {
     day: "2-digit",
     month: "2-digit",
     year: "2-digit",
   });
-  const timeString = date.toLocaleTimeString(locale, {
+  const timeString = date.toLocaleTimeString("en", {
     hour: "2-digit",
     minute: "2-digit",
     second: "2-digit",
@@ -29,12 +29,12 @@ const getLocaleTime = (locale: string) => {
 export default function Clock() {
   const locale = useCurrentLocale();
   const ref = useRef<NodeJS.Timeout | null>(null);
-  const [localTime, setLocalTime] = useState(getLocaleTime(locale));
+  const [localTime, setLocalTime] = useState(getLocaleTime());
 
   useEffect(() => {
     if (ref.current) clearInterval(ref.current);
     ref.current = setInterval(() => {
-      setLocalTime(getLocaleTime(locale));
+      setLocalTime(getLocaleTime());
     }, 1000);
     return () => {
       if (ref.current) clearInterval(ref.current);
@@ -46,7 +46,7 @@ export default function Clock() {
       <div className="leading-3 text-xs">
         <p>{timeZone}</p>
       </div>
-      <div>
+      <div className="leading-3 text-sm">
         <p>
           <time suppressHydrationWarning>
             {`${localTime.date[0]}/${localTime.date[1]}/${localTime.date[2]} `}

@@ -1,7 +1,9 @@
+"use server";
+
 import { ReactElement } from "react";
 import { I18nProviderClient } from "../locales/client";
 
-export default function SubLayout({
+export default async function SubLayout({
   params: { locale },
   children,
 }: {
