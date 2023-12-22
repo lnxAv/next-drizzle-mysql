@@ -10,13 +10,20 @@ export async function GET(): Promise<NextResponse<ExempleGetResponse>> {
     const payload = await getExemple();
     if (!payload) throw new Error("failed");
     return NextResponse.json({ payload, server: "success" });
-  } catch (error) {
-    // ? The connection failed, read README.md for more information
-    return NextResponse.json({ payload: null, server: "failed" });
+  } catch ({ ...error }: any) {
+    if (error.message === "failed") {
+      // ? Congrats, you've found a bug in the code!
+      // ? This error is thrown when the database connection fails.
+      return NextResponse.json({ payload: null, server: "failed", error: {} });
+    }
+    // ? Congrats, you've found a bug in the code!
+    // ? This error is thrown when the database worked, but something else went wrong.
+    return NextResponse.json({ payload: null, server: "success", error });
   }
 }
 
 export type ExempleGetResponse = {
   payload: ExempleDataType;
   server: "failed" | "success";
+  error?: unknown;
 };

@@ -1,14 +1,15 @@
-// ? == Drizzle schemas ==
-// ?  https://orm.drizzle.team/docs/schemas
-
 import {
   mysqlTable,
+  mysqlSchema,
+  AnyMySqlColumn,
   primaryKey,
   varchar,
   int,
   index,
+  foreignKey,
   tinytext,
 } from "drizzle-orm/mysql-core";
+import { sql } from "drizzle-orm";
 
 export const exampleLang = mysqlTable(
   "example_lang",

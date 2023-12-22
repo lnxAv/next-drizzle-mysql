@@ -2,7 +2,7 @@ import { getCurrentLocale } from "@/app/locales/server";
 import { eq } from "drizzle-orm";
 import { MySql2Database } from "drizzle-orm/mysql2";
 import { getDb } from "../dbConnection";
-import { exempleTable } from "../../db_tables";
+import { exampleText } from "../../db_tables";
 
 export default async function getExemple() {
   const lang = getCurrentLocale();
@@ -12,8 +12,9 @@ export default async function getExemple() {
 
   const results = await db
     .select()
-    .from(exempleTable)
-    .where(eq(exempleTable.lang_id, lang));
+    .from(exampleText)
+    .where(eq(exampleText.fkLang, lang));
+
   return results;
 }
 

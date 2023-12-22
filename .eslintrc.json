@@ -14,7 +14,8 @@
   "rules": {
     "import/no-extraneous-dependencies": ["off"],
     "import/prefer-default-export": ["off"],
-    "react/require-default-props": ["off"]
+    "react/require-default-props": ["off"],
+    "@typescript-eslint/no-unused-vars": "warn"
     // Preferences for quick projects
     /* "react/jsx-props-no-spreading": "off",
     "react/no-array-index-key": "off",
@@ -27,7 +28,6 @@
     "import/no-self-import": "off",
     "no-plusplus": "off",
     "no-else-return": "off",
-    "@typescript-eslint/no-unused-vars": "warn",
     "@typescript-eslint/no-use-before-define": "off",
     "no-use-before-define": "off",
     "react/function-component-definition": [

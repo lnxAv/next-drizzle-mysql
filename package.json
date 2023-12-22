@@ -7,9 +7,13 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "npx prettier --write --ignore-path .gitignore .",
-    "generate": "drizzle-kit generate:mysql",
-    "introspect": "drizzle-kit introspect:mysql",
+    "prettier": "npx prettier --write --ignore-path .gitignore .",
+    "migrate": "drizzle-kit generate:mysql && echo [Linting /database] && npx next lint --fix --dir database",
+    "drop": "drizzle-kit drop && echo [Linting /database] && npx next lint --fix --dir database",
+    "check-db": "drizzle-kit check:mysql",
+    "pull-db": "drizzle-kit introspect:mysql && echo [Linting /database] && npx next lint --fix --dir database",
+    "push-db": "drizzle-kit push:mysql",
+    "studio-db": "drizzle-kit studio",
     "prepare": "husky install"
   },
   "dependencies": {

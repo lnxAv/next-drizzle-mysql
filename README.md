@@ -1,32 +1,51 @@
 [![screencapture-localhost-3000-en-2023-12-21-01-10-11.png](https://i.postimg.cc/YqJQLbk2/screencapture-localhost-3000-en-2023-12-21-01-10-11.png)](https://postimg.cc/fJfV67J1)
 
-## Documentation order
+# 📙About
 
-- Instalation(Npm + Vercel secrets dev vs prod / Clean vs Example Project)
-- Husky (npx husky install + lint-stage)
-- Database Information ( Drizzle ORM )
-- i18n informations ( https://next-international.vercel.app/ )
-- Admin information
+Create instant MySql **gratification** with a light, types safe ORM offering time saving tools. <br /> Pain-pleasure principle anyone?
 
-## Getting Started
+## ⚙️Installation
 
-npm run dev
+### Step 1
 
-# or
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fnext.js%2Ftree%2Fcanary%2Fexamples%2Fhello-world&env=DATABASE_USER,DATABASE_PASSWORD,DATABASE_HOST,DATABASE_PORT,DATABASE_SCHEMA&envDescription=Drizzle%20db%20credentials&project-name=next-drizzle-mysql-starter&repository-name=next-drizzle-mysql-starter&demo-title=Next.js%20-%20Drizzle%20-%20MySQL&demo-description=Create%20instant%20MySql%20gratification%20with%20a%20light%2C%20types%20safe%20ORM&demo-url=https%3A%2F%2Fnext-drizzle-mysql.vercel.app%2Fen&demo-image=https%3A%2F%2Fi.postimg.cc%2FYqJQLbk2%2Fscreencapture-localhost-3000-en-2023-12-21-01-10-11.png)<br/>
+Or </br>
+`npx create-next-app https://github.com/lnxAv/next-drizzle-mysql`
 
-yarn dev
+### Step 2
 
-# or
+<details>
+<summary><h3>I'm using Vercel Deploy</h3></summary>
+1. In your browser, go to your deployment settings > Environment Variables</br>
+2. Name the following variables accordingly </br>
+  ( Note: You can separate production & development keys for security reasons) 
+  <pre>DATABASE_USER, DATABASE_PASSWORD, DATABASE_HOST, DATABASE_PORT, DATABASE_SCHEMA</pre>
+<br><br>
+3. In your porject folder type <pre>Vercel env pull</pre>
+  ( Note: You can also type `vercel env ls` to list them )
+</details>
+<details>
+<summary><h3>I'm using npm create-next-app</h3></summary>
+1. In your project create a `.env.local` file</br>
+2. Copy paste and fill accordingly
+  <pre>
+    # Development variables
+    DATABASE_USER="root"
+    DATABASE_PASSWORD="admin"
+    DATABASE_SCHEMA="database"
+    DATABASE_HOST="localhost"
+    DATABASE_PORT="3306"
+  </pre>
+<br><br>
+</details>
 
-pnpm dev
+## 🔰Database Setup
 
-# or
+For unfamilliar users, you can easily deploy your own database, </br>
+Grab a coffee and learn the basics in 17 minutes. </br>
+[MySQL - The Basics // Learn SQL in 23 Easy Step](https://youtu.be/Cz3WcZLRaWc "MySQL - The Basics // Learn SQL in 23 Easy Step") </br>
+[![MySQL - The Basics // Learn SQL in 23 Easy Step](http://img.youtube.com/vi/Cz3WcZLRaWc/0.jpg)](https://youtu.be/Cz3WcZLRaWc "MySQL - The Basics // Learn SQL in 23 Easy Step")
 
-bun dev
+## Commands
 
-```
-
-## Learn More
-
-## Deploy on Vercel
-```
+## Documentation & usefull links

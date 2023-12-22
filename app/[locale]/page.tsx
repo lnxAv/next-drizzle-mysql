@@ -38,6 +38,29 @@ export default function Page() {
     fetch(url).then((res) => res.json());
   const { data, isLoading } = useSWR(`/api/exemple`, fetcher);
 
+  const displayPangram = () => (
+    <>
+      <p className="font-bold opacity-100">{t("pangram")}</p>
+      <p className="opacity-80">{t("pangram")}</p>
+      <p className="opacity-60">{t("pangram")}</p>
+      <p className="opacity-40">{t("pangram")}</p>
+      <p className="opacity-20">{t("pangram")}</p>
+      <p className="opacity-10">{t("pangram")}</p>
+    </>
+  );
+
+  const displayData = () => {
+    const displayArray: string[] = Array(5);
+    if (data && data.payload?.[0]) {
+      Object.keys(data.payload[0]).forEach((key, i, arr) => {
+        displayArray[arr.length - i] = `${key}: ${data.payload?.[0]?.[
+          key as keyof (typeof data.payload)[0]
+        ]}`;
+      });
+    }
+    return displayArray;
+  };
+
   return (
     <>
       {/* bg & blob */}
@@ -131,12 +154,9 @@ export default function Page() {
                 className="ml-auto mt-auto text-xl max-md:text-lg max-sm:text-lg px-2 md:px-5 sm:px-5 py-2 lg:text-2xl xl:text-2xl max-sm:[writing-mode:vertical-rl] max-sm:rotate-180 ,"
                 style={{ lineHeight: "10px" }}
               >
-                <p className="font-bold opacity-100">{t("pangram")}</p>
-                <p className="opacity-80">{t("pangram")}</p>
-                <p className="opacity-60">{t("pangram")}</p>
-                <p className="opacity-40">{t("pangram")}</p>
-                <p className="opacity-20">{t("pangram")}</p>
-                <p className="opacity-10">{t("pangram")}</p>
+                {displayData().map((stringedData, i) => (
+                  <p key={stringedData}>{stringedData}</p>
+                ))}
               </div>
             </div>
           </div>
