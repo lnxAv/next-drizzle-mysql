@@ -36,6 +36,27 @@ Or </br>
 <br><br>
 </details>
 
+### Step 3
+**Make sure your connection is successful**
+<details>
+<summary><h3>I'm using a new database schema</h3></summary>
+1. Push the example tables in your new database with
+  <pre>npx drizzle-kit push:mysql</pre>
+2. Populate your database with the magic button </br>
+3. Read the documentation below and enjoy :)
+</details>
+<details>
+<summary><h3>I'm using a my own database</h3></summary>
+1. Pull your database DDL
+  <pre>npm run pull-db</pre>
+2. Copy the content from => to
+  <pre>database/drizzle/schema.ts => database/db_tables.ts</pre>
+2. Get your data by modifying the example in
+  <pre>app/api/route.ts</pre>
+4. If needed, modify the "magicAction" to populate your database. </br>
+5. Read the documentation below and enjoy :)
+</details>
+
 ## 🔰Database Setup
 For unfamilliar users, you can easily deploy your own database, </br>
 Grab a coffee and learn the basics in 17 minutes. </br>
