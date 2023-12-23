@@ -48,7 +48,7 @@ Or </br>
 <summary><h3>I'm using my own database</h3></summary>
 1. Pull your database DDL with
   <pre>npm run pull-db</pre>
-2. Copy the content from => to
+2. Copy the content From => To
   <pre>database/drizzle/schema.ts => database/db_tables.ts</pre>
 2. Get your data by modifying the example in
   <pre>app/api/route.ts</pre>
