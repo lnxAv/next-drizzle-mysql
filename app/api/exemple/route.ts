@@ -6,15 +6,16 @@ import { NextResponse } from "next/server";
 export const dynamic = "force-dynamic";
 
 export async function GET(): Promise<NextResponse<ExempleGetResponse>> {
+  let payload: ExempleDataType = null;
   try {
-    const payload = await getExemple();
+    payload = await getExemple();
     if (!payload) throw new Error("failed");
     return NextResponse.json({ payload, server: "success" });
-  } catch ({ ...error }: any) {
-    if (error.message === "failed") {
+  } catch (error: any) {
+    if (payload === null) {
       // ? Congrats, you've found a bug in the code!
       // ? This error is thrown when the database connection fails.
-      return NextResponse.json({ payload: null, server: "failed", error: {} });
+      return NextResponse.json({ payload: null, server: "failed", error });
     }
     // ? Congrats, you've found a bug in the code!
     // ? This error is thrown when the database worked, but something else went wrong.
