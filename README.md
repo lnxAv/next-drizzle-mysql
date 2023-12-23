@@ -45,8 +45,8 @@ Or </br>
 3. Read the documentation below and enjoy :)
 </details>
 <details>
-<summary><h3>I'm using a my own database</h3></summary>
-1. Pull your database DDL
+<summary><h3>I'm using my own database</h3></summary>
+1. Pull your database DDL with
   <pre>npm run pull-db</pre>
 2. Copy the content from => to
   <pre>database/drizzle/schema.ts => database/db_tables.ts</pre>
