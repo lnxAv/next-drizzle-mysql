@@ -18,7 +18,7 @@ Or </br>
 2. Fill the following variable accordingly </br>
   ( Note: You can separate production & development env's for security purpose ) 
   <pre>DATABASE_USER, DATABASE_PASSWORD, DATABASE_HOST, DATABASE_PORT, DATABASE_SCHEMA</pre>
-3. In your project folder type <pre>Vercel env pull</pre>
+3. In your project terminal type <pre>Vercel env pull</pre>
   ( Note: You can also type "vercel env ls" to list them )
 </details>
 <details>
