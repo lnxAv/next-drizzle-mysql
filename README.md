@@ -23,7 +23,7 @@ Or </br>
 </details>
 <details>
 <summary><h3>I'm using npm create-next-app</h3></summary>
-1. In your project create a `.env.local` file</br>
+1. In your project root add a `.env.local` file</br>
 2. Copy paste and fill accordingly
   <pre>
     # Development variables
