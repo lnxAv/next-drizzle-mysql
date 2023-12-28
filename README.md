@@ -66,19 +66,31 @@ Grab a coffee and learn the basics in 17 minutes. </br>
 [MySQL - The Basics // Learn SQL in 23 Easy Step](https://youtu.be/Cz3WcZLRaWc "MySQL - The Basics // Learn SQL in 23 Easy Step") </br>
 [![MySQL - The Basics // Learn SQL in 23 Easy Step](http://img.youtube.com/vi/Cz3WcZLRaWc/0.jpg)](https://youtu.be/Cz3WcZLRaWc "MySQL - The Basics // Learn SQL in 23 Easy Step")
 
-## Commands
+## 🤖Commands
 
-|                                npm run                                 | Description                                                                      |
-| :--------------------------------------------------------------------: | :------------------------------------------------------------------------------- |
-|                                  dev                                   | Launch the project in development mode                                           |
-|                                 build                                  | Build the project, great to see package size                                     |
-|                                 start                                  | Launch the built project                                                         |
-|                                prettier                                | Clean files according to .prettierrrc.json                                       |
-|                                  lint                                  | Verify files according to .eslintrc.json                                         |
-| [Migrate](https://orm.drizzle.team/docs/migrations#run-the-migrations) | Run the migrations with Drizzle                                                  |
-|   [drop](https://orm.drizzle.team/kit-docs/commands#drop-migration)    | Lets you delete previously generated migrations from migrations folder           |
-| [pull-db](https://orm.drizzle.team/kit-docs/commands#introspect--pull) | Lets you pull DDL from existing database and generate a `schema.ts`              |
-| [push-db](https://orm.drizzle.team/kit-docs/commands#prototype--push)  | Lets you push your schema changes directly to the database                       |
-|     [studio-db](https://orm.drizzle.team/drizzle-studio/overview)      | Drizzle Studio is a new way for you to explore SQL database on Drizzle projects. |
+|                                **npm run**                                 | **Description**                                                                      |
+| :-------------------------------------------------------------------- | :-------- |
+| dev  | Launch the project in development mode       |
+| build | Build the project, great to see package size  |
+|  start | Launch the built project |
+|  prettier | Clean files according to `.prettierrrc.json` |
+| lint  | Verify files according to `.eslintrc.json` |
+| [Migrate](https://orm.drizzle.team/docs/migrations#run-the-migrations) | Run the migrations with Drizzle | 
+[drop](https://orm.drizzle.team/kit-docs/commands#drop-migration) | Lets you delete previously generated migrations from migrations folder |
+| [pull-db](https://orm.drizzle.team/kit-docs/commands#introspect--pull) | Lets you pull DDL from existing database and generate a `schema.ts` |
+| [push-db](https://orm.drizzle.team/kit-docs/commands#prototype--push)  | Lets you push your schema changes directly to the database |
+|  [studio-db](https://orm.drizzle.team/drizzle-studio/overview) | Drizzle Studio is a new way for you to explore SQL database on Drizzle projects. |
 
-## Tools documentation
+## 🛠️Tools documentation
+| **Categories** | **Links**  |
+| :---- | :------- |
+| Cores |  [**Next.js**](https://nextjs.org/docs), [**Vercel**](https://vercel.com/docs), [**Drizzle ORM**](https://orm.drizzle.team/docs/overview) |
+| Traductions |  [next-international](https://next-international.vercel.app/docs) |
+| Providers |  [Next-Themes](https://github.com/pacocoursey/next-themes) |
+|  Fetcher |  [SWR.js](https://swr.vercel.app/docs/getting-started) |
+| Animation |  [Motion.dev](https://motion.dev/guides/quick-start) |
+| Dev Dependencies |  [husky](https://typicode.github.io/husky/getting-started.html), [dotenv](https://www.npmjs.com/package/dotenv), [drizzle-kit](https://orm.drizzle.team/kit-docs/overview) |
+| | **Total:** 50kb|
+
+
+
