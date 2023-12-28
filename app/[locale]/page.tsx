@@ -36,7 +36,7 @@ export default function Page() {
   const { theme } = useTheme();
   const fetcher: Fetcher<ExempleGetResponse, string> = (url: string) =>
     fetch(url).then((res) => res.json());
-  const { data, isLoading, error } = useSWR(`/api/exemple`, fetcher);
+  const { data, isLoading } = useSWR(`/api/exemple`, fetcher);
 
   const displayPangram = () => (
     <>
