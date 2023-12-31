@@ -50,15 +50,20 @@ export default function Page() {
   );
 
   const displayData = () => {
-    let componentArray: JSX.Element[] = [];
-    if (data && data.payload?.[0]) {
-      componentArray = Object.keys(data.payload[0]).map((key) => (
-        <p key={key}>{`${key}: ${data.payload?.[0]?.[
+    if (data && Array.isArray(data.payload) && data.payload?.[0]) {
+      let componentArray: JSX.Element[] = [];
+      const item = data.payload?.[0];
+      componentArray = Object.keys(item).map((key) => (
+        <p key={key}>{`${key}: ${item?.[
           key as keyof (typeof data.payload)[0]
         ]}`}</p>
       ));
+      return componentArray;
     }
-    return componentArray;
+
+    // Process failed data without payload
+    const errPayload = data?.payload as any;
+    return <p> {errPayload?.message ?? "ERR_"}</p>;
   };
 
   return (
